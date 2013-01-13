@@ -1,0 +1,24 @@
+#!/usr/bin/ruby
+require_relative 'dirTools.rb'
+
+def usage()
+    return "usage:\n    setd <name> [path]"
+end
+
+if ARGV.length == 1
+    defs = DirTools.loadDefs
+    defs[ARGV[0]] = Dir.pwd
+    DirTools.saveDefs(defs)
+    exit 0
+end
+
+if ARGV.length == 2
+    defs = DirTools.loadDefs
+    
+    defs[ARGV[0]] = ARGV[1]
+    DirTools.safeDefs(defs)
+    exit 0
+end
+
+puts usage
+exit -1

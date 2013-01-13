@@ -1,0 +1,22 @@
+#!/usr/bin/ruby
+require_relative 'dirTools.rb'
+
+def usage()
+    return "usage:\n    getd <name>"
+end
+
+if ARGV.length != 1
+    puts usage
+    exit -1
+end
+
+defs = DirTools.loadDefs
+
+x = defs[ARGV[0]]
+
+if (x)
+    puts x
+    exit 0
+else
+    exit -1
+end
