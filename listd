@@ -2,7 +2,7 @@
 require_relative 'dirTools.rb'
 
 def usage()
-    return "usage:\n    listd [<name>]"
+    return "usage:\n    listd"
 end
 
 if ARGV.length != 0
