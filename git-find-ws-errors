@@ -1,2 +1,2 @@
-git list-files "$1" | xargs grep -lP "(\r)|(\s+$)|(^ +)"
+git list-files "$1" | xargs grep -lP "(\r)|(\s+$)|(^   *)"
 
