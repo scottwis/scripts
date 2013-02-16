@@ -1,0 +1,1 @@
+git status -s | grep $1 | cut -c 4- | xargs git add
