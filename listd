@@ -12,8 +12,17 @@ end
 
 defs = DirTools.loadDefs().sort_by {|name, dir| name}
 
+if defs.length > 0
+    puts ""
+end
+
 defs.each {|x|
-    puts "#{x[0]}\t#{x[1]}"
+    puts "#{x[0]}\t\t#{x[1]}"
 }
+
+if defs.length > 0
+    puts ""
+end
+
 exit 0
 
