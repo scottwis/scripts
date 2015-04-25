@@ -10,10 +10,10 @@ if ARGV.length != 0
     exit -1
 end
 
-defs = DirTools.loadDefs
+defs = DirTools.loadDefs().sort_by {|name, dir| name}
 
-defs.keys.each {|x|
-    puts "#{x}\t#{defs[x]}"
+defs.each {|x|
+    puts "#{x[0]}\t#{x[1]}"
 }
 exit 0
 
