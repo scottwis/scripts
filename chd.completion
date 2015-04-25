@@ -1,0 +1,12 @@
+_chd() {
+    cur="${COMP_WORDS[COMP_CWORD]}"
+    opts="$(listd | cut -f 1)"
+    if [ "${COMP_CWORD}" -eq 1 ]
+    then
+        COMPREPLY=( $(compgen -W "${opts}" -- ${cur}) )
+        return 0
+    else
+        return -1
+    fi
+}
+complete -F _chd chd
